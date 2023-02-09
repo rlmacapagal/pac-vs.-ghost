@@ -373,7 +373,7 @@ class TileMap {
     this.yellowDot.src = "images/yellowDot.png";
 
     this.pinkDot = new Image();
-    this.pinkDot.src = "images/pinkdot.png";
+    this.pinkDot.src = "images/pinkDot.png";
 
     this.wall = new Image();
     this.wall.src = "images/wall.png";
@@ -478,8 +478,6 @@ class TileMap {
           //socket.emit('update', pacman);
           return p;
         }
-        // ctx.strokeStyle = "red";
-        // ctx.strokeRect(column*this.tileSize, row*this.tileSize, this.tileSize, this.tileSize);
       }
     }
   }
@@ -653,15 +651,6 @@ function gameLoop() {
   //console.log(enemies[0].x, "ghost");
   console.log(tapos);
   checkGameWin();
-  /*
-    a = pacman.x
-    b = pacman.y;
-    */
-
-  //socket.emit('update', a, b);
-
-  //console.log(pacman.x); //288 orig
-  //IO.socket.emit('update',a, b, c, d, e, f);
 }
 
 function checkGameWin() {
@@ -695,7 +684,6 @@ function isGameOver() {
     tapos
   )
     return true;
-  //check if powerdot is active and if bumangga si pacman sa kalaban
 }
 
 function drawGameEnd() {
@@ -725,27 +713,15 @@ socket.on("id", (players) => {
   console.log(player2);
 });
 
-//console.log(pacman.x);
-//let a = pacman.x;
-///let b = pacman.y;
-//console.log(a);
-//gameLoop(a,b);
-//setInterval(function(){gameLoop(pacman, enemies)}, 500 / 75);
-
 socket.on("render", function (key) {
   //console.log("render");
   console.log(key);
-  //a = a;
-  //b = b;
-  //console.log(g, h);
-  //.currentMovingDirection = g;
-  //pacman.requestedMovingDirection = h;
+
   if (key == 38) {
     if (pacman.currentMovingDirection == MovingDirection.down)
       pacman.currentMovingDirection = MovingDirection.up;
     pacman.requestedMovingDirection = MovingDirection.up;
-    //.currentMovingDirection = this.currentMovingDirection;
-    //pacman.requestedMovingDirection = this.requestedMovingDirection;od
+
     console.log(this.requestedMovingDirection);
   }
   //down
