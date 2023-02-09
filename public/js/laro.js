@@ -171,7 +171,7 @@ class Pacman {
     this.pacmanRotation = this.Rotation.right;
     this.wakaSound = new Audio("../sounds/waka.wav");
 
-    this.powerDotSound = new Audio("../sounds/power_Dot.wav");
+    this.powerDotSound = new Audio("../sounds/power_dot.wav");
     this.powerDotActive = false;
     this.powerDotAboutToExpire = false;
     this.timers = [];
