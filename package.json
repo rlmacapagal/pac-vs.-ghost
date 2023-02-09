@@ -1,0 +1,17 @@
+{
+  "name": "pacman",
+  "version": "0.0.1",
+  "description": "Pacman multi player game",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "optionalDependencies": {
+    "type": "module"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "heroku": "^7.2.0",
+    "socket.io": "^4.4.1"
+  }
+}

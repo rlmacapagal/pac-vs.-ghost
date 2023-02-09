@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--jquery-->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script> <!--socket.io-->
+ 
+ 
+    <style>
+        #canvas
+        {
+            box-shadow: 10px 10px 20px black;
+            text-align: center;
+            margin: 0 auto;
+           
+        }
+        h1, h2, #gameArea
+        {
+            text-align: center;
+            font-family: comic sans MS;
+            color: white;
+            margin: 10px auto;
+        }
+        #main
+        {
+            display: flex;
+            justify-content: center;
+            /*overflow: hidden; */
+            height: 100vh;
+            background-color: black;
+
+        }
+
+     #status
+        {
+            color: purple;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #gameId, #waiting
+        {
+            color: white;
+        }
+
+        p{
+            display: block;
+            color: yellow;
+            text-align: center;
+            margin: 0;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <audio src="sounds/gameStart.wav" id="my_audio" ></audio>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("my_audio").play();
+    }
+  </script>
+
+
+<div id="main">
+    <div id="gameArea">
+
+        <h1>Pac-Man</h1>
+        <canvas id="canvas"></canvas>
+        <p>First player to join  is pacman - controls is arrow keys; To win, ghost must be eaten and all dots eaten</p>
+        <p>Second player to join is the ghost - controls is WSAD; To win, simply eat pacman at normal state</p>
+        <p>Need two players to commence</p>
+
+        <h2 id="status"></h2>
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"  src="./js/laro.js" ></script>
+
+
+
+
+
+
+</body>
+</html>
