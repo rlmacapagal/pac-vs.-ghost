@@ -717,7 +717,7 @@ socket.on("render", function (key) {
   //console.log("render");
   console.log(key);
 
-  if (key == 38) {
+  if (key == 73) {
     if (pacman.currentMovingDirection == MovingDirection.down)
       pacman.currentMovingDirection = MovingDirection.up;
     pacman.requestedMovingDirection = MovingDirection.up;
@@ -725,19 +725,19 @@ socket.on("render", function (key) {
     console.log(this.requestedMovingDirection);
   }
   //down
-  if (key == 40) {
+  if (key == 75) {
     if (pacman.currentMovingDirection == MovingDirection.up)
       pacman.currentMovingDirection = MovingDirection.down;
     pacman.requestedMovingDirection = MovingDirection.down;
   }
   //left
-  if (key == 37) {
+  if (key == 74) {
     if (pacman.currentMovingDirection == MovingDirection.right)
       pacman.currentMovingDirection = MovingDirection.left;
     pacman.requestedMovingDirection = MovingDirection.left;
   }
   //right
-  if (key == 39) {
+  if (key == 76) {
     if (pacman.currentMovingDirection == MovingDirection.left)
       pacman.currentMovingDirection = MovingDirection.right;
     pacman.requestedMovingDirection = MovingDirection.right;
