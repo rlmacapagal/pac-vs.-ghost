@@ -48,6 +48,12 @@ io.on("connection", function (socket) {
     console.log(player2, "player2");
   }
   */
+  const origin = socket.request.headers.origin;
+  // Check the origin of the request
+  if (!origin.startsWith("https://")) {
+    // If the origin is not from a browser, ignore the request
+    return;
+  }
 
   if (players.length >= 3) {
     return;
