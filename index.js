@@ -66,7 +66,8 @@ io.on("connection", function (socket) {
 
   players.push(socket.id);
 
-  if (players.length >= 2) {
+  if (players.length === 2) {
+    console.log("game can start now");
     player2 = players[players.length - 1];
     player1 = players[players.length - 2];
   }
@@ -80,7 +81,7 @@ io.on("connection", function (socket) {
     }, 1000 / 75);
     //setInterval(function (){ io.emit('render')}, 1000 / 75);
   }
-  console.log("a user connected");
+  console.log("a user connected", socket.id);
 
   socket.on("disconnect", function () {
     players = players.filter((p) => p !== socket.id);
