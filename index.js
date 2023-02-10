@@ -101,19 +101,15 @@ io.on("connection", function (socket) {
     console.log(players);
 
     if (
-      (player === player1 && key == 73) ||
-      key == 74 ||
-      key == 75 ||
-      key == 76
+      player === player1 &&
+      (key == 73 || key == 74 || key == 75 || key == 76)
     ) {
       console.log("player1 tira");
       io.emit("render", key);
       //console.log('aus');
     } else if (
-      (player === player2 && key == 87) ||
-      key == 83 ||
-      key == 65 ||
-      key == 68
+      player === player2 &&
+      (key == 87 || key == 83 || key == 65 || key == 68)
     ) {
       console.log("player2 tira");
       io.emit("render", key);
