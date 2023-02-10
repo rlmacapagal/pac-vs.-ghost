@@ -130,3 +130,7 @@ io.on("connection", function (socket) {
 http.listen(port, function () {
   console.log("Server listening at port %d", port);
 });
+
+module.exports = {
+  players: players,
+};

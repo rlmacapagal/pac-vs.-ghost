@@ -617,9 +617,12 @@ const gameWinSound = new Audio("../sounds/gameWin.wav");
 let tapos = false;
 
 function gameLoop() {
+  if (!playaz) playaz = [];
+
   tileMap.draw(ctx);
   console.log(player1, "player1");
   console.log(player2, "player2");
+  console.log("playaz", playaz);
 
   if (pacman.collideWith(enemies) && !pacman.powerDotActive) {
     tapos = true;
@@ -704,10 +707,15 @@ let player2 = "";
 console.log("hi");
 socket.on("id", (players) => {
   //console.log(id);
+  playaz = players;
 
-  player1 = players[0];
+  if (playaz.length == 1) player1 = playaz[playaz.length - 1];
+  else if (playaz.length == 2) player2 = playaz[playaz.length - 1];
 
-  if (players.length > 1) player2 = players[1];
+  if (playaz.length > 2) {
+    player2 = playaz[playaz.length - 1];
+    player1 = playaz[playaz.length - 2];
+  }
 
   console.log(player1);
   console.log(player2);
