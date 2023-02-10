@@ -49,7 +49,12 @@ io.on("connection", function (socket) {
   }
   */
 
+  if (players.length >= 3) {
+    return;
+  }
+
   players.push(socket.id);
+
   if (players.length >= 2) {
     player2 = players[players.length - 1];
     player1 = players[players.length - 2];
