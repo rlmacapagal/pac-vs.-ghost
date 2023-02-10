@@ -713,6 +713,8 @@ socket.on("id", (players) => {
   console.log(player2);
 });
 
+//console.log(key);
+
 socket.on("render", function (key) {
   //console.log("render");
   console.log(key);
