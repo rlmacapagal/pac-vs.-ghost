@@ -82,6 +82,15 @@ io.on("connection", function (socket) {
   }
   console.log("a user connected");
 
+  socket.on("disconnect", function () {
+    players = players.filter((p) => p !== socket.id);
+    io.emit("id", players);
+    if (players.length < 2) {
+      maysetintervalnaba = false;
+    }
+    console.log("user disconnected");
+  });
+
   socket.on("update", (player, key) => {
     data = player;
     console.log(player, "player");
@@ -89,6 +98,7 @@ io.on("connection", function (socket) {
     console.log(data, "data");
     console.log(player1, "player1");
     console.log(player2, "player2");
+    console.log(players);
 
     if (
       data === player1 &&
