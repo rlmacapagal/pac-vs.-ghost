@@ -48,10 +48,15 @@ io.on("connection", function (socket) {
     console.log(player2, "player2");
   }
   */
-  const origin = socket.request.headers.origin;
-  // Check the origin of the request
-  if (!origin.startsWith("https://")) {
-    // If the origin is not from a browser, ignore the request
+  let origin = socket.request.headers.origin;
+
+  // Check if the origin is either "https://pac-vs-ghost.onrender.com" or "http://localhost"
+  if (
+    origin &&
+    !origin.startsWith("https://pac-vs-ghost.onrender.com") &&
+    !origin.startsWith("http://localhost:3000")
+  ) {
+    // If the origin is not allowed, return immediately
     return;
   }
 
