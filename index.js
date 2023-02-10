@@ -33,6 +33,7 @@ let players = [];
 io.on("connection", function (socket) {
   //Whenever someone connects this gr.ets executed; o connection, disconnection, etc., events in it, using the socket object
 
+  /*
   if (player1 == "") {
     player1 = socket.id;
     id = player1;
@@ -46,6 +47,14 @@ io.on("connection", function (socket) {
     io.emit("id", players);
     console.log(player2, "player2");
   }
+  */
+
+  players.push(socket.id);
+  if (players.length >= 2) {
+    player2 = players[players.length - 1];
+    player1 = players[players.length - 2];
+  }
+  io.emit("id", players);
 
   if (!maysetintervalnaba) {
     // may tumatakbo na ba na setinterval?
