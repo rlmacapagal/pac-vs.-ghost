@@ -100,17 +100,11 @@ io.on("connection", function (socket) {
     console.log(player2, "player2");
     console.log(players);
 
-    if (
-      data === player1 &&
-      (key == 73 || key == 74 || key == 75 || key == 76)
-    ) {
+    if (key == 73 || key == 74 || key == 75 || key == 76) {
       console.log("player1 tira");
       io.emit("render", key);
       //console.log('aus');
-    } else if (
-      data === player2 &&
-      (key == 87 || key == 83 || key == 65 || key == 68)
-    ) {
+    } else if (key == 87 || key == 83 || key == 65 || key == 68) {
       console.log("player2 tira");
       io.emit("render", key);
     } else {
